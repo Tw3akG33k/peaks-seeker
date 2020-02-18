@@ -1,0 +1,29 @@
+---
+version: '3.7'
+services:
+
+  peaks-seeker:
+    image: peaks-seeker:latest
+    container_name: ${PEAKS_NAMESPACE}-seeker
+    build: .
+    environment:
+    - PEAKS_LOCATIONS=${PEAKS_LOCATIONS}
+    - PEAKS_LANGUAGES=${PEAKS_LANGUAGES}
+    - PEAKS_REPO_MIN_STARS=${PEAKS_REPO_MIN_STARS}
+    - PEAKS_PARALLEL_JOBS=${PEAKS_PARALLEL_JOBS}
+    - PEAKS_GITHUB_TOKENS=${PEAKS_GITHUB_TOKENS}
+    volumes:
+    - peaks-cache:/opt/lucmichalski/bin/cache
+    - peaks-data:/opt/lucmichalski/data
+    networks:
+    - internal
+
+volumes:
+  peaks-cache:
+  peaks-data:
+
+networks:
+  internal:
+  web:
+    external: true
+
