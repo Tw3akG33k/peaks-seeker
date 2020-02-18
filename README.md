@@ -1,6 +1,6 @@
-# Seeker
+# Peaks Seeker
 
-[![CircleCI](https://circleci.com/gh/x0rzkov/seeker.svg?style=svg)](https://circleci.com/gh/x0rzkov/seeker)
+[![CircleCI](https://circleci.com/gh/lucmichalski/peaks-seeker.svg?style=svg)](https://circleci.com/gh/lucmichalski/peaks-seeker)
 
 Search GitHub repositories for potential job candidates.
 
@@ -57,7 +57,7 @@ Then run the executable or use the docker image `x0rzkov/seeker`.
 ## Installing
 
 Make sure you have an up-to-date version of
-[Go](https://golang.org/) and [Glide](https://github.com/Masterminds/glide) installed.
+[Go](https://golang.org/) > 1.13.x installed.
 
 Run `make deps` to install library dependencies. Run `make build` to build the executable.
 
