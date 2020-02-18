@@ -18,12 +18,12 @@ Search GitHub repositories for potential job candidates.
 
 ```bash
 docker run \
-  -e PEAKS_GITHUB_TOKEN="YOUR-GITHUB-PERSONAL-TOKEN-HERE" \
-  -e PEAKS_LOCATIONS="Berlin|San Francisco" \
-  -e PEAKS_LANGUAGES="Ruby|Go" \
+  -e PEAKS_GITHUB_TOKENS="YOUR-GITHUB-PERSONAL-TOKEN-HERE1,YOUR-GITHUB-PERSONAL-TOKEN-HERE2" \
+  -e PEAKS_LOCATIONS="lyon|marseille|rennes|tours" \
+  -e PEAKS_LANGUAGES="Ruby|Go|PHP" \
   -e PEAKS_REPO_MIN_STARS="20000" \
-  x0rzkov/seeker \
-  > candidates.tsv
+  lucmichalski/peaks-seeker \
+  > peaks-candidates.tsv
 ```
 
 This examples looks for Ruby and Go developers in Berlin and San Francisco.
@@ -47,7 +47,7 @@ Set the following environment variables to specify the configuration.
 
 Environment Variable | Description | Example Value
 --- | --- | ---
-PEAKS_GITHUB_TOKEN | A [GitHub Personal Access Token](https://github.com/settings/tokens) |
+PEAKS_GITHUB_TOKENS | Several [GitHub Personal Access Tokens](https://github.com/settings/tokens) |
 PEAKS_LOCATIONS | Location filter, separated by `|`  | `Berlin|San Francisco`
 PEAKS_LANGUAGES | Desired programming languages, separated by `|` | `Ruby|Go`
 PEAKS_REPO_MIN_STARS | Minimum repo star count | `20`
